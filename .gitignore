@@ -1,3 +1,17 @@
+# IntelliJ Dateien
+.idea/
+*.iml
+
+# Eclipse Dateien
+bin/
+.metadata/
+*.classpath
+*.project
+build.fxbuild
+
+# Targetordner
+*.target/
+
 # Compiled class file
 *.class
 
