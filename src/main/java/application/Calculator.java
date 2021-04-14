@@ -51,5 +51,9 @@ public class Calculator {
 	
 	/* Hier die Methoden mit den Formlen hinzufügen
 	 */
+
+	public double uAusRmalI(double r, double i) {
+		return r * i;
+	}
 	
 }
