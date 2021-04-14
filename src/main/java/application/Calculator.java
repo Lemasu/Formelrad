@@ -35,6 +35,10 @@ public class Calculator {
 		return widerstand;
 	}
 
+	public double pAusUundI(double u, double i) {
+		return u*i;
+	}
+	
 	@Override
 	public String toString() {
 		return "Calculator [leistung=" + leistung + 
