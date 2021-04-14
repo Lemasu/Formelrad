@@ -59,5 +59,9 @@ public class Calculator {
 	public double uAusPdurchI(double p, double i) {
 		return p * i;
 	}
+
+	public double uAusWurzelPmalR(double p, double r) {
+		return Math.sqrt(p * r);
+	}
 	
 }
