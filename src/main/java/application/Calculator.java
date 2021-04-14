@@ -55,6 +55,10 @@ public class Calculator {
 		return p/u;
 	}
 
+	public double iAusUundR(double u, double r){
+		return u/r;
+	}
+
 	@Override
 	public String toString() {
 		return "Calculator [leistung=" + leistung + 
