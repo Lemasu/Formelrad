@@ -40,11 +40,23 @@ public class Calculator {
 	}
 
 	public double pAusRundI(double r, double i){
-		return r*i*i;
+		return r*Math.pow(i,2);
 	}
 
 	public double pAusUundR(double u, double r){
 		return u*u/r;
+	}
+
+	public double iAusPundR(double p, double r){
+		return Math.sqrt(p/r);
+	}
+
+	public double iAusUundP(double u, double p){
+		return p/u;
+	}
+
+	public double iAusUundR(double u, double r){
+		return u/r;
 	}
 
 	@Override
