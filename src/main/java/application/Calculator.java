@@ -67,6 +67,10 @@ public class Calculator {
 		return p/Math.pow(i,2);
 	}
 
+	public double rAusUundP(double p, double u){
+		return Math.pow(u,2)/p;
+	}
+
 	@Override
 	public String toString() {
 		return "Calculator [leistung=" + leistung + 
