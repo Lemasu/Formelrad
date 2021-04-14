@@ -55,5 +55,9 @@ public class Calculator {
 	public double uAusRmalI(double r, double i) {
 		return r * i;
 	}
+
+	public double uAusPdurchI(double p, double i) {
+		return p * i;
+	}
 	
 }
