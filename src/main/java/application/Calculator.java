@@ -38,7 +38,11 @@ public class Calculator {
 	public double pAusUundI(double u, double i) {
 		return u*i;
 	}
-	
+
+	public double pAusRundI(double r, double i){
+		return r*i*i;
+	}
+
 	@Override
 	public String toString() {
 		return "Calculator [leistung=" + leistung + 
