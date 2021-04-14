@@ -63,5 +63,17 @@ public class Calculator {
 	
 	/* Hier die Methoden mit den Formlen hinzufügen
 	 */
+
+	public double uAusRmalI(double r, double i) {
+		return r * i;
+	}
+
+	public double uAusPdurchI(double p, double i) {
+		return p * i;
+	}
+
+	public double uAusWurzelPmalR(double p, double r) {
+		return Math.sqrt(p * r);
+	}
 	
 }
