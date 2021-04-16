@@ -17,6 +17,7 @@ public class Calculator {
 		this.spannung = spannung;
 		this.strom = strom;
 		this.widerstand = widerstand;
+		this.calculate();
 	}
 	
 	public double getLeistung() {
@@ -83,6 +84,21 @@ public class Calculator {
 		if (leistung != 0.0 && spannung != 0.0) {
 			strom = iAusUundP(spannung, leistung);
 			widerstand = rAusUundP(leistung, spannung);
+		} else if (leistung != 0.0 && strom != 0.0) {
+			spannung = uAusPdurchI(leistung, strom);
+			widerstand = rAusPundI(leistung, strom);
+		} else if (leistung != 0.0 && widerstand != 0.0) {
+			spannung = uAusWurzelPmalR(leistung, widerstand);
+			strom = iAusPundR(leistung, widerstand);
+		} else if (spannung != 0.0 && strom != 0.0) {
+			leistung = pAusUundI(spannung, strom);
+			widerstand = rAusUundI(spannung, strom);
+		} else if (spannung != 0.0 && widerstand != 0.0) {
+			leistung = pAusUundR(spannung, widerstand);
+			strom = iAusUundR(spannung, widerstand);
+		} else if (strom != 0.0 && widerstand != 0.0) {
+			leistung = pAusRundI(widerstand, strom);
+			spannung = uAusRmalI(widerstand, strom);
 		}
 	}
 	
