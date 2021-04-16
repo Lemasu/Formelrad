@@ -74,6 +74,9 @@ public class Calculator {
 		} else if (leistung != 0.0 && strom != 0.0) {
 			spannung = uAusPdurchI(leistung, strom);
 			widerstand = rAusPundI(leistung, strom);
+		} else if (leistung != 0.0 && widerstand != 0.0) {
+			spannung = uAusWurzelPmalR(leistung, widerstand);
+			strom = iAusPundR(leistung, widerstand);
 		}
 	}
 	
