@@ -83,22 +83,34 @@ public class Calculator {
 	public void calculate() {
 		if (leistung != 0.0 && spannung != 0.0) {
 			strom = iAusUundP(spannung, leistung);
+			System.out.println("Strom aus Spannung und Leistung " + spannung + ":" + leistung + " = " + iAusUundP(spannung,leistung));
 			widerstand = rAusUundP(leistung, spannung);
+			System.out.println("Widerstand aus Spannung und Leistung " + spannung + "Quadrat " + ": " + leistung + " = " + rAusUundP(spannung,leistung));
 		} else if (leistung != 0.0 && strom != 0.0) {
 			spannung = uAusPdurchI(leistung, strom);
+			System.out.println("Spannung aus Strom und Leistung " + strom + ":" + leistung + " = " + uAusPdurchI(strom,leistung));
 			widerstand = rAusPundI(leistung, strom);
+			System.out.println("Widerstand aus Strom und Leistung " + leistung + ":" + strom + "Quadrat " + " = " + rAusPundI(strom,leistung));
 		} else if (leistung != 0.0 && widerstand != 0.0) {
 			spannung = uAusWurzelPmalR(leistung, widerstand);
+			System.out.println("Widerstand aus Strom und Leistung " + leistung + ":" + strom + "Quadrat " + " = " + rAusPundI(strom,leistung));
 			strom = iAusPundR(leistung, widerstand);
+			System.out.println("Strom aus Widerstand und Leistung Wurzel aus " + leistung + ":" + widerstand +  " = " + iAusPundR(leistung,widerstand));
 		} else if (spannung != 0.0 && strom != 0.0) {
 			leistung = pAusUundI(spannung, strom);
 			widerstand = rAusUundI(spannung, strom);
+			System.out.println("Leistung aus Spannung und Strom " + spannung + "*" + strom + " = " + pAusUundI(spannung,strom));
+			System.out.println("Widerstand aus Spannung und Strom " + spannung + ":" + strom + " = " + rAusUundI(spannung,strom));
 		} else if (spannung != 0.0 && widerstand != 0.0) {
 			leistung = pAusUundR(spannung, widerstand);
 			strom = iAusUundR(spannung, widerstand);
+			System.out.println("Leistung aus Spannung und Widerstand " + spannung + " * " + spannung + " / " + strom + " = " + pAusUundR(spannung,widerstand));
+			System.out.println("Strom aus Spannung und Widerstand " + spannung + "/" + widerstand + " = " + iAusUundR(spannung, widerstand));
 		} else if (strom != 0.0 && widerstand != 0.0) {
 			leistung = pAusRundI(widerstand, strom);
 			spannung = uAusRmalI(widerstand, strom);
+			System.out.println("Leistung aus Strom und Widerstand " + widerstand + " * " + strom + "^2 = " + pAusRundI(widerstand,strom));
+			System.out.println("Spannung aus Strom und Widerstand " + widerstand + " * " + strom + " = " + uAusRmalI(widerstand, strom));
 		}
 	}
 	
