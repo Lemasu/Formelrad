@@ -85,15 +85,19 @@ public class Main extends Application {
 				boolean [] isEingetragen = new boolean [4];
 				if(txLeistung.getText().isEmpty()==false) {
 					power = Double.parseDouble(txLeistung.getText());
+					isEingetragen[0] = true;
 				}
 				if(txSpannung.getText().isEmpty()==false) {
 					tension = Double.parseDouble(txSpannung.getText());
+					isEingetragen[1] = true;
 				}
 				if(txStrom.getText().isEmpty()==false) {
 					current = Double.parseDouble(txStrom.getText());
+					isEingetragen[2] = true;
 				}
 				if(txWiderstand.getText().isEmpty()==false) {
 					resistence = Double.parseDouble(txWiderstand.getText());
+					isEingetragen[3] = true;
 				}
 				Calculator myCalculator = new Calculator(
 						power, tension, current, resistence);
