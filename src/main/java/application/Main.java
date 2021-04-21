@@ -99,14 +99,21 @@ public class Main extends Application {
 					resistence = Double.parseDouble(txWiderstand.getText());
 					zaehler++;
 				}
-				Calculator myCalculator = new Calculator(
-						power, tension, current, resistence);
-					
-				txLeistung.setText(Double.toString(myCalculator.getLeistung()));
-				txSpannung.setText(Double.toString(myCalculator.getSpannung()));
-				txStrom.setText(Double.toString(myCalculator.getStrom()));
-				txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+				if(zaehler == 2) {
+					Calculator myCalculator = new Calculator(
+							power, tension, current, resistence);
+
+					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
+					txSpannung.setText(Double.toString(myCalculator.getSpannung()));
+					txStrom.setText(Double.toString(myCalculator.getStrom()));
+					txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+				}
+				else{
+					System.out.println("Es müssen genau 2 Werte eingetragen werden");
+					txLeistung.setText("Es müssen genau 2 Werte eingetragen werden");
+				}
 			});
+
 
 			Scene scene = new Scene(root, 330, 490);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
