@@ -83,13 +83,17 @@ public class Calculator {
 	public void calculate() {
 		if (leistung != 0.0 && spannung != 0.0) {
 			strom = iAusUundP(spannung, leistung);
-			widerstand = rAusUundP(leistung, spannung);
 			System.out.println("Strom aus Spannung und Leistung " + spannung + ":" + leistung + " = " + iAusUundP(spannung,leistung));
+			widerstand = rAusUundP(leistung, spannung);
+			System.out.println("Widerstand aus Spannung und Leistung " + spannung + "Quadrat " + ": " + leistung + " = " + rAusUundP(spannung,leistung));
 		} else if (leistung != 0.0 && strom != 0.0) {
 			spannung = uAusPdurchI(leistung, strom);
+			System.out.println("Spannung aus Strom und Leistung " + strom + ":" + leistung + " = " + uAusPdurchI(strom,leistung));
 			widerstand = rAusPundI(leistung, strom);
+			System.out.println("Widerstand aus Strom und Leistung " + leistung + ":" + strom + "Quadrat " + " = " + rAusPundI(strom,leistung));
 		} else if (leistung != 0.0 && widerstand != 0.0) {
 			spannung = uAusWurzelPmalR(leistung, widerstand);
+			System.out.println("Widerstand aus Strom und Leistung " + leistung + ":" + strom + "Quadrat " + " = " + rAusPundI(strom,leistung));
 			strom = iAusPundR(leistung, widerstand);
 		} else if (spannung != 0.0 && strom != 0.0) {
 			leistung = pAusUundI(spannung, strom);
