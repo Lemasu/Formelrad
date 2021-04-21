@@ -87,6 +87,7 @@ public class Main extends Application {
 				boolean [] isEingetragen = new boolean [4];
 				if(txLeistung.getText().isEmpty()==false) {
 					power = Double.parseDouble(txLeistung.getText());
+					zaehler++;
 					isEingetragen[0] = true;
 				}
 				if(txSpannung.getText().isEmpty()==false) {
