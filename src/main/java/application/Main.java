@@ -1,6 +1,7 @@
 package application;
 
 import javafx.application.Application;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -83,38 +84,66 @@ public class Main extends Application {
 				double tension = 0.0;
 				double current = 0.0;
 				double resistence = 0.0;
+				boolean [] isEingetragen = new boolean [4];
 				if(txLeistung.getText().isEmpty()==false) {
 					power = Double.parseDouble(txLeistung.getText());
-					zaehler++;
+					isEingetragen[0] = true;
 				}
 				if(txSpannung.getText().isEmpty()==false) {
 					tension = Double.parseDouble(txSpannung.getText());
-					zaehler++;
+				zaehler++;
+					isEingetragen[1] = true;
 				}
 				if(txStrom.getText().isEmpty()==false) {
 					current = Double.parseDouble(txStrom.getText());
 					zaehler++;
+					isEingetragen[2] = true;
 				}
 				if(txWiderstand.getText().isEmpty()==false) {
 					resistence = Double.parseDouble(txWiderstand.getText());
 					zaehler++;
+					isEingetragen[3] = true;
 				}
-				if(zaehler == 2) {
-					Calculator myCalculator = new Calculator(
-							power, tension, current, resistence);
+				Calculator myCalculator = new Calculator(
+						power, tension, current, resistence);
 
+			if(zaehler == 2) {
+				if (isEingetragen[0]) {
 					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
+					txLeistung.setStyle("-fx-text-fill: black;");
+				} else {
+					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
+					txLeistung.setStyle("-fx-text-fill: red;");
+				}
+				if (isEingetragen[1]) {
 					txSpannung.setText(Double.toString(myCalculator.getSpannung()));
+					txSpannung.setStyle("-fx-text-fill: black;");
+				} else {
+					txSpannung.setText(Double.toString(myCalculator.getLeistung()));
+					txSpannung.setStyle("-fx-text-fill: red;");
+				}
+				if (isEingetragen[2]) {
 					txStrom.setText(Double.toString(myCalculator.getStrom()));
+					txStrom.setStyle("-fx-text-fill: black;");
+				} else {
+					txStrom.setText(Double.toString(myCalculator.getLeistung()));
+					txStrom.setStyle("-fx-text-fill: red;");
+				}
+				if (isEingetragen[3]) {
 					txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+					txWiderstand.setStyle("-fx-text-fill: black;");
+				} else {
+					txWiderstand.setText(Double.toString(myCalculator.getLeistung()));
+					txWiderstand.setStyle("-fx-text-fill: red;");
 				}
-				else{
-					System.out.println("Es müssen genau 2 Werte eingetragen werden");
-					txLeistung.setText("Es müssen genau 2 Werte eingetragen werden");
-					txSpannung.setText("");
-					txStrom.setText("");
-					txWiderstand.setText("");
-				}
+			}
+			else{
+				System.out.println("Es müssen genau 2 Werte eingetragen werden");
+				txLeistung.setText("Es müssen genau 2 Werte eingetragen werden");
+				txSpannung.setText("");
+				txStrom.setText("");
+				txWiderstand.setText("");
+			}
 			});
 
 
