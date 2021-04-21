@@ -105,6 +105,7 @@ public class Calculator {
 			leistung = pAusRundI(widerstand, strom);
 			spannung = uAusRmalI(widerstand, strom);
 			System.out.println("Leistung aus Strom und Widerstand " + widerstand + " * " + strom + "^2 = " + pAusRundI(widerstand,strom));
+			System.out.println("Spannung aus Strom und Widerstand " + widerstand + " * " + strom + " = " + uAusRmalI(widerstand, strom));
 		}
 	}
 	
