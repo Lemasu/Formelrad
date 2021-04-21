@@ -1,6 +1,7 @@
 package application;
 
 import javafx.application.Application;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -101,11 +102,30 @@ public class Main extends Application {
 				}
 				Calculator myCalculator = new Calculator(
 						power, tension, current, resistence);
-					
-				txLeistung.setText(Double.toString(myCalculator.getLeistung()));
-				txSpannung.setText(Double.toString(myCalculator.getSpannung()));
-				txStrom.setText(Double.toString(myCalculator.getStrom()));
-				txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+				if (isEingetragen[0]) {
+					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
+				} else {
+					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
+					txLeistung.setStyle("-fx-text-fill: red;");
+				}
+				if (isEingetragen[1]) {
+					txSpannung.setText(Double.toString(myCalculator.getSpannung()));
+				} else {
+					txSpannung.setText(Double.toString(myCalculator.getLeistung()));
+					txSpannung.setStyle("-fx-text-fill: red;");
+				}
+				if (isEingetragen[2]) {
+					txStrom.setText(Double.toString(myCalculator.getStrom()));
+				} else {
+					txStrom.setText(Double.toString(myCalculator.getLeistung()));
+					txStrom.setStyle("-fx-text-fill: red;");
+				}
+				if (isEingetragen[3]) {
+					txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+				} else {
+					txWiderstand.setText(Double.toString(myCalculator.getLeistung()));
+					txWiderstand.setStyle("-fx-text-fill: red;");
+				}
 			});
 
 			Scene scene = new Scene(root, 330, 490);
