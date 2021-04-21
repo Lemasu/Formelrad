@@ -125,21 +125,21 @@ public class Main extends Application {
                         txSpannung.setText(Double.toString(myCalculator.getSpannung()));
                         txSpannung.setStyle("-fx-text-fill: black;");
                     } else {
-                        txSpannung.setText(Double.toString(myCalculator.getLeistung()));
+                        txSpannung.setText(Double.toString(myCalculator.getSpannung()));
                         txSpannung.setStyle("-fx-text-fill: red;");
                     }
                     if (isEingetragen[2]) {
                         txStrom.setText(Double.toString(myCalculator.getStrom()));
                         txStrom.setStyle("-fx-text-fill: black;");
                     } else {
-                        txStrom.setText(Double.toString(myCalculator.getLeistung()));
+                        txStrom.setText(Double.toString(myCalculator.getStrom()));
                         txStrom.setStyle("-fx-text-fill: red;");
                     }
                     if (isEingetragen[3]) {
                         txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
                         txWiderstand.setStyle("-fx-text-fill: black;");
                     } else {
-                        txWiderstand.setText(Double.toString(myCalculator.getLeistung()));
+                        txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
                         txWiderstand.setStyle("-fx-text-fill: red;");
                     }
                 } else {
