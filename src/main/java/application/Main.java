@@ -78,30 +78,45 @@ public class Main extends Application {
 			root.getChildren().add(btnBerechnen);
 			
 			btnBerechnen.setOnAction(e -> {
+				int zaehler = 0;
 				double power = 0.0;
 				double tension = 0.0;
 				double current = 0.0;
 				double resistence = 0.0;
 				if(txLeistung.getText().isEmpty()==false) {
 					power = Double.parseDouble(txLeistung.getText());
+					zaehler++;
 				}
 				if(txSpannung.getText().isEmpty()==false) {
 					tension = Double.parseDouble(txSpannung.getText());
+					zaehler++;
 				}
 				if(txStrom.getText().isEmpty()==false) {
 					current = Double.parseDouble(txStrom.getText());
+					zaehler++;
 				}
 				if(txWiderstand.getText().isEmpty()==false) {
 					resistence = Double.parseDouble(txWiderstand.getText());
+					zaehler++;
 				}
-				Calculator myCalculator = new Calculator(
-						power, tension, current, resistence);
-					
-				txLeistung.setText(Double.toString(myCalculator.getLeistung()));
-				txSpannung.setText(Double.toString(myCalculator.getSpannung()));
-				txStrom.setText(Double.toString(myCalculator.getStrom()));
-				txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+				if(zaehler == 2) {
+					Calculator myCalculator = new Calculator(
+							power, tension, current, resistence);
+
+					txLeistung.setText(Double.toString(myCalculator.getLeistung()));
+					txSpannung.setText(Double.toString(myCalculator.getSpannung()));
+					txStrom.setText(Double.toString(myCalculator.getStrom()));
+					txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+				}
+				else{
+					System.out.println("Es müssen genau 2 Werte eingetragen werden");
+					txLeistung.setText("Es müssen genau 2 Werte eingetragen werden");
+					txSpannung.setText("");
+					txStrom.setText("");
+					txWiderstand.setText("");
+				}
 			});
+
 
 			Scene scene = new Scene(root, 330, 490);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
