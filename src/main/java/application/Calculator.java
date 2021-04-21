@@ -95,6 +95,7 @@ public class Calculator {
 			spannung = uAusWurzelPmalR(leistung, widerstand);
 			System.out.println("Widerstand aus Strom und Leistung " + leistung + ":" + strom + "Quadrat " + " = " + rAusPundI(strom,leistung));
 			strom = iAusPundR(leistung, widerstand);
+			System.out.println("Strom aus Widerstand und Leistung Wurzel aus " + leistung + ":" + widerstand +  " = " + iAusPundR(leistung,widerstand));
 		} else if (spannung != 0.0 && strom != 0.0) {
 			leistung = pAusUundI(spannung, strom);
 			widerstand = rAusUundI(spannung, strom);
