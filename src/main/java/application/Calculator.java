@@ -81,7 +81,7 @@ public class Calculator {
 	}
 
 	public void calculate() {
-		if (leistung != 0.0 && spannung != 0.0 && strom == 0.0 && widerstand == 0.0) {
+		if (leistung != 0.0 && spannung != 0.0) {
 			strom = iAusUundP(spannung, leistung);
 			widerstand = rAusUundP(leistung, spannung);
 		} else if (leistung != 0.0 && strom != 0.0) {
@@ -99,9 +99,6 @@ public class Calculator {
 		} else if (strom != 0.0 && widerstand != 0.0) {
 			leistung = pAusRundI(widerstand, strom);
 			spannung = uAusRmalI(widerstand, strom);
-		}
-		else {
-			System.out.println("Es müssen genau 2 Werte eingetragen werden");
 		}
 	}
 	
