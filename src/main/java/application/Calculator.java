@@ -95,6 +95,7 @@ public class Calculator {
 			leistung = pAusUundI(spannung, strom);
 			widerstand = rAusUundI(spannung, strom);
 			System.out.println("Leistung aus Spannung und Strom " + spannung + "*" + strom + " = " + pAusUundI(spannung,strom));
+			System.out.println("Widerstand aus Spannung und Strom " + spannung + ":" + strom + " = " + rAusUundI(spannung,strom));
 		} else if (spannung != 0.0 && widerstand != 0.0) {
 			leistung = pAusUundR(spannung, widerstand);
 			strom = iAusUundR(spannung, widerstand);
