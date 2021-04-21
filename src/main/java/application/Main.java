@@ -111,6 +111,9 @@ public class Main extends Application {
 				else{
 					System.out.println("Es müssen genau 2 Werte eingetragen werden");
 					txLeistung.setText("Es müssen genau 2 Werte eingetragen werden");
+					txSpannung.setText("");
+					txStrom.setText("");
+					txWiderstand.setText("");
 				}
 			});
 
