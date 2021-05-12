@@ -209,7 +209,7 @@ public class Main extends Application {
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();
-            // Wir wollen hier ein Mergekonflikt provozieren.
+            // Hier soll ein Merge-Konlfikt generiert.
         }
     }
 }
