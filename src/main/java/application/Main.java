@@ -83,12 +83,16 @@ public class Main extends Application {
             root.getChildren().add(btnBerechnen);
 
             btnBerechnen.setOnAction(e -> {
+                int counter = 0;
                 int zaehler = 0;
                 double power = 0.0;
                 double tension = 0.0;
                 double current = 0.0;
                 double resistence = 0.0;
                 boolean[] isEingetragen = new boolean[4];
+                if(txLeistung.getText().isEmpty()==true && txStrom.getText().isEmpty()==true && txSpannung.getText().isEmpty()==true && txWiderstand.getText().isEmpty()==true){
+                    txLeistung.setText("Tragen Sie bitte zwei Werte ein");
+                }
                 if (txLeistung.getText().isEmpty() == false) {
                     try {
                         power = Double.parseDouble(txLeistung.getText());
@@ -147,6 +151,7 @@ public class Main extends Application {
                 }
 
                 if (zaehler == 2) {
+                    counter++;
                     Calculator myCalculator = new Calculator(
                             power, tension, current, resistence);
 
@@ -184,6 +189,12 @@ public class Main extends Application {
                     txSpannung.setText("");
                     txStrom.setText("");
                     txWiderstand.setText("");
+                    if(counter%2 == 0){
+                        txLeistung.setText("");
+                        txSpannung.setText("");
+                        txWiderstand.setText("");
+                        txStrom.setText("");
+                    }
                 }
             });
 
