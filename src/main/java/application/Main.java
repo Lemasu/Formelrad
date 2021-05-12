@@ -26,6 +26,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             Pane root = new Pane();
+            root.setStyle("-fx-background-color: white");
 
             // Creating an image
             Image image = new Image(getClass().getResourceAsStream("formelradelektronik.gif"));
