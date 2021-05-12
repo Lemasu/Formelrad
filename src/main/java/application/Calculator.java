@@ -85,15 +85,15 @@ public class Calculator {
 			strom = iAusUundP(spannung, leistung);
 			System.out.println("Strom aus Spannung und Leistung " + spannung + ":" + leistung + " = " + iAusUundP(spannung,leistung));
 			widerstand = rAusUundP(leistung, spannung);
-			System.out.println("Widerstand aus Spannung und Leistung " + spannung + "Quadrat " + ": " + leistung + " = " + rAusUundP(spannung,leistung));
+			System.out.println("Widerstand aus Spannung und Leistung " + spannung + "Quadrat " + ": " + leistung + " = " + rAusUundP(leistung,spannung));
 		} else if (leistung != 0.0 && strom != 0.0) {
 			spannung = uAusPdurchI(leistung, strom);
-			System.out.println("Spannung aus Strom und Leistung " + strom + ":" + leistung + " = " + uAusPdurchI(strom,leistung));
+			System.out.println("Spannung aus Strom und Leistung " + strom + ":" + leistung + " = " + uAusPdurchI(leistung,strom));
 			widerstand = rAusPundI(leistung, strom);
-			System.out.println("Widerstand aus Strom und Leistung " + leistung + ":" + strom + "Quadrat " + " = " + rAusPundI(strom,leistung));
+			System.out.println("Widerstand aus Strom und Leistung " + leistung + ":" + strom + "Quadrat " + " = " + rAusPundI(leistung,strom));
 		} else if (leistung != 0.0 && widerstand != 0.0) {
 			spannung = uAusWurzelPmalR(leistung, widerstand);
-			System.out.println("Widerstand aus Strom und Leistung " + leistung + ":" + strom + "Quadrat " + " = " + rAusPundI(strom,leistung));
+			System.out.println("Wurzel aus Leistung mal Widerstand " + leistung + "*" + widerstand + " = " + uAusWurzelPmalR(leistung,widerstand));
 			strom = iAusPundR(leistung, widerstand);
 			System.out.println("Strom aus Widerstand und Leistung Wurzel aus " + leistung + ":" + widerstand +  " = " + iAusPundR(leistung,widerstand));
 		} else if (spannung != 0.0 && strom != 0.0) {
