@@ -104,7 +104,16 @@ public class Main extends Application {
                     isEingetragen[0] = true;
                 }
                 if (txSpannung.getText().isEmpty() == false) {
-                    tension = Double.parseDouble(txSpannung.getText());
+                    try {
+                        tension = Double.parseDouble(txSpannung.getText());
+                    } catch (NumberFormatException numberFormatException) {
+                        System.out.println("Achtung! Es duerfen nur Zahlen bei der Eingabe verwendet werden.");
+                        txLeistung.setText("Es dürfen nur Zahlen eingegeben werden");
+                        txSpannung.setText("");
+                        txStrom.setText("");
+                        txWiderstand.setText("");
+                        return;
+                    }
                     zaehler++;
                     isEingetragen[1] = true;
                 }
