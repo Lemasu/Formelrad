@@ -64,7 +64,7 @@ public class Main extends Application {
 
             TextField txStrom = new TextField();
             txStrom.relocate(100, 365);
-            txStrom.setFont(Font.font("Verdana", 15));
+            txStrom.setFont(Font.font("Calibri", 15));
             root.getChildren().add(txStrom);
 
             Label lblWiderstand = new Label("Widerstand:");
