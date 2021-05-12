@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  * Formelrad Application
  *
  * @author Gilles Russo und Alex Schaub
- * @version 14.04.2021
+ * @version 12.05.2021
  */
 public class Main extends Application {
     public static void main(String[] args) {
@@ -90,22 +90,58 @@ public class Main extends Application {
                 double resistence = 0.0;
                 boolean[] isEingetragen = new boolean[4];
                 if (txLeistung.getText().isEmpty() == false) {
-                    power = Double.parseDouble(txLeistung.getText());
+                    try {
+                        power = Double.parseDouble(txLeistung.getText());
+                    } catch (NumberFormatException numberFormatException) {
+                        System.out.println("Achtung! Es duerfen nur Zahlen bei der Eingabe verwendet werden.");
+                        txLeistung.setText("Es dürfen nur Zahlen eingegeben werden");
+                        txSpannung.setText("");
+                        txStrom.setText("");
+                        txWiderstand.setText("");
+                        return;
+                    }
                     zaehler++;
                     isEingetragen[0] = true;
                 }
                 if (txSpannung.getText().isEmpty() == false) {
-                    tension = Double.parseDouble(txSpannung.getText());
+                    try {
+                        tension = Double.parseDouble(txSpannung.getText());
+                    } catch (NumberFormatException numberFormatException) {
+                        System.out.println("Achtung! Es duerfen nur Zahlen bei der Eingabe verwendet werden.");
+                        txLeistung.setText("Es dürfen nur Zahlen eingegeben werden");
+                        txSpannung.setText("");
+                        txStrom.setText("");
+                        txWiderstand.setText("");
+                        return;
+                    }
                     zaehler++;
                     isEingetragen[1] = true;
                 }
                 if (txStrom.getText().isEmpty() == false) {
-                    current = Double.parseDouble(txStrom.getText());
+                    try {
+                        current = Double.parseDouble(txStrom.getText());
+                    } catch (NumberFormatException numberFormatException) {
+                        System.out.println("Achtung! Es duerfen nur Zahlen bei der Eingabe verwendet werden.");
+                        txLeistung.setText("Es dürfen nur Zahlen eingegeben werden");
+                        txSpannung.setText("");
+                        txStrom.setText("");
+                        txWiderstand.setText("");
+                        return;
+                    }
                     zaehler++;
                     isEingetragen[2] = true;
                 }
                 if (txWiderstand.getText().isEmpty() == false) {
-                    resistence = Double.parseDouble(txWiderstand.getText());
+                    try {
+                        resistence = Double.parseDouble(txWiderstand.getText());
+                    } catch (NumberFormatException numberFormatException) {
+                        System.out.println("Achtung! Es duerfen nur Zahlen bei der Eingabe verwendet werden.");
+                        txLeistung.setText("Es dürfen nur Zahlen eingegeben werden");
+                        txSpannung.setText("");
+                        txStrom.setText("");
+                        txWiderstand.setText("");
+                        return;
+                    }
                     zaehler++;
                     isEingetragen[3] = true;
                 }
