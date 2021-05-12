@@ -90,7 +90,16 @@ public class Main extends Application {
                 double resistence = 0.0;
                 boolean[] isEingetragen = new boolean[4];
                 if (txLeistung.getText().isEmpty() == false) {
-                    power = Double.parseDouble(txLeistung.getText());
+                    try {
+                        power = Double.parseDouble(txLeistung.getText());
+                    } catch (NumberFormatException numberFormatException) {
+                        System.out.println("Achtung! Es duerfen nur Zahlen bei der Eingabe verwendet werden.");
+                        txLeistung.setText("Es dürfen nur Zahlen eingegeben werden");
+                        txSpannung.setText("");
+                        txStrom.setText("");
+                        txWiderstand.setText("");
+                        return;
+                    }
                     zaehler++;
                     isEingetragen[0] = true;
                 }
