@@ -155,9 +155,13 @@ public class Main extends Application {
                     txWiderstand.setText("");
                     if(counter%2 == 0){
                         txLeistung.setText("");
+                        txLeistung.setStyle("-fx-text-fill: black;");
                         txSpannung.setText("");
+                        txSpannung.setStyle("-fx-text-fill: black;");
                         txWiderstand.setText("");
+                        txWiderstand.setStyle("-fx-text-fill: black;");
                         txStrom.setText("");
+                        txStrom.setStyle("-fx-text-fill: black;");
                     }
                 }
             });
