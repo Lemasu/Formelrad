@@ -132,7 +132,16 @@ public class Main extends Application {
                     isEingetragen[2] = true;
                 }
                 if (txWiderstand.getText().isEmpty() == false) {
-                    resistence = Double.parseDouble(txWiderstand.getText());
+                    try {
+                        resistence = Double.parseDouble(txWiderstand.getText());
+                    } catch (NumberFormatException numberFormatException) {
+                        System.out.println("Achtung! Es duerfen nur Zahlen bei der Eingabe verwendet werden.");
+                        txLeistung.setText("Es dürfen nur Zahlen eingegeben werden");
+                        txSpannung.setText("");
+                        txStrom.setText("");
+                        txWiderstand.setText("");
+                        return;
+                    }
                     zaehler++;
                     isEingetragen[3] = true;
                 }
