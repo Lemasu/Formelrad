@@ -118,7 +118,16 @@ public class Main extends Application {
                     isEingetragen[1] = true;
                 }
                 if (txStrom.getText().isEmpty() == false) {
-                    current = Double.parseDouble(txStrom.getText());
+                    try {
+                        current = Double.parseDouble(txStrom.getText());
+                    } catch (NumberFormatException numberFormatException) {
+                        System.out.println("Achtung! Es duerfen nur Zahlen bei der Eingabe verwendet werden.");
+                        txLeistung.setText("Es dürfen nur Zahlen eingegeben werden");
+                        txSpannung.setText("");
+                        txStrom.setText("");
+                        txWiderstand.setText("");
+                        return;
+                    }
                     zaehler++;
                     isEingetragen[2] = true;
                 }
